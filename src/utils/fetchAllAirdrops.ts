@@ -3,6 +3,7 @@ import type {
 	SPLTokenData,
 	TAidropInfo,
 	TAirdropData,
+	TClaimantData,
 	TDistributorData,
 } from '../types/Airdrops'
 import { clusterApiUrl, Connection, PublicKey } from '@solana/web3.js'
@@ -61,6 +62,16 @@ class Airdrop {
 
 	private async searchDistributor(distributorAddress: string) {
 		console.log(distributorAddress)
+	}
+
+	private async claimantInfo(distributorAddress: string) {
+		const options: AxiosRequestConfig = {
+			method: 'GET',
+			url: `https://staging-api-public.streamflow.finance/v2/api/airdrops/${distributorAddress}/claimants/${this.publicKey}`,
+		}
+
+		const { data } = await axios.request<TClaimantData>(options)
+		return data
 	}
 
 	airdrops = async (): Promise<TAirdropData[]> => {
@@ -130,19 +141,31 @@ class Airdrop {
 		}
 	}
 
-	// searchAirdrop = async (airdropId: string) => {
-	// 	const validatePublicKey = this.validatePublicKey(airdropId)
-	// 	if (!validatePublicKey) {
-	// 		throw new Error('Invalid distributorAddress')
-	// 	}
+	searchAirdrop = async (airdropId: string): Promise<TAirdropData> => {
+		const validatePublicKey = this.validatePublicKey(airdropId)
+		if (!validatePublicKey) {
+			throw new Error('Invalid distributorAddress')
+		}
 
-	// 	try {
-	// 		const [aidropClaimantInfo] = await Promise.all([
-	// 			this.airdropClaimantInfo(airdropId),
-	// 			this.getDistributorData(airdropId),
-	// 		])
-	// 	} catch (error) {}
-	// }
+		try {
+			const [aidropClaimantInfo, claimantData] = await Promise.all([
+				this.getDistributorData(airdropId),
+				this.claimantInfo(airdropId),
+			])
+			const finalResult = {
+				...aidropClaimantInfo,
+				baseInfo: {
+					amountLocked: claimantData.amountLocked,
+					amountUnlocked: claimantData.amountUnlocked,
+				},
+			} as TAirdropData
+
+			return finalResult
+		} catch (error) {
+			console.error('Error: ', error)
+			throw error
+		}
+	}
 }
 
 const mintMap = new Map<string, SPLTokenData>()

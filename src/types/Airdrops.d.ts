@@ -1,8 +1,8 @@
 export type TAidropInfo = {
 	amountLocked: string
 	amountUnlocked: string
-	amountClaimed: string
-	claimableValue: string
+	amountClaimed?: string
+	claimableValue?: string
 	address: string
 	distributorAddress: string
 	mint: string

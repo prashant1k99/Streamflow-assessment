@@ -1,23 +1,40 @@
 import { useState } from 'react'
 import Button from './ui/button'
+import AirdropItem from './AirdropItem'
+import { useWallet } from '@solana/wallet-adapter-react'
+import type { TAirdropData } from '../types/Airdrops'
+import { Airdrop } from '../utils/fetchAllAirdrops'
 
 interface SearchAirdropsProps {
 	updateSearch: (isSearching: boolean) => void
 }
 
 const SearchAirdrop = ({ updateSearch }: SearchAirdropsProps) => {
+	const { publicKey } = useWallet()
+
 	const [address, setAddress] = useState('')
 	const [isLoading, setIsLoading] = useState(false)
-	const [data, setData] = useState<[]>([])
-	const formSubmit = () => {
+	const [data, setData] = useState<TAirdropData | null>(null)
+	const formSubmit = async () => {
 		if (address == '') {
 			updateSearch(false)
 			return
 		}
 
-		setData([])
+		if (!publicKey) {
+			alert('Please connect your wallet')
+			return
+		}
+		setIsLoading(true)
 		updateSearch(true)
-		// setIsLoading(true)
+		const airdropHandler = new Airdrop(publicKey.toString())
+		try {
+			const data = await airdropHandler.searchAirdrop(address)
+			setData(data)
+		} catch (error) {
+			console.error('Error fetching distributors:', error)
+		}
+		setIsLoading(false)
 	}
 	return (
 		<div className="p-4 w-[80%]">
@@ -39,24 +56,7 @@ const SearchAirdrop = ({ updateSearch }: SearchAirdropsProps) => {
 				</Button>
 			</form>
 			<hr className="my-4" />
-			{isLoading ? (
-				<div>Loading...</div>
-			) : data ? (
-				<div>
-					<ul>
-						{data.map((rec) => (
-							<li key={rec}>
-								<div>Name: {rec}</div>
-								<div></div>
-								<div>Unlocked Amount: {rec}</div>
-								<div>Locked Amount: {rec}</div>
-							</li>
-						))}
-					</ul>
-				</div>
-			) : (
-				<div>No record found</div>
-			)}
+			{isLoading ? <div>Loading...</div> : data && <AirdropItem {...data} />}
 		</div>
 	)
 }
