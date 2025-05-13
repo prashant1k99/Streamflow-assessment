@@ -1,5 +1,6 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletReadyState } from '@solana/wallet-adapter-base';
+import Button from "./ui/button";
 
 const WalletConnector = () => {
   const { connected, wallets, publicKey, select, disconnect } = useWallet();
@@ -27,14 +28,13 @@ const WalletConnector = () => {
   }
 
   return (
-    <button
-      className="select-none flex gap-2 py-2 px-4 bg-blue-500 rounded-sm text-gray-100 cursor-pointer"
+    <Button
       onClick={() => select(wallets[0].adapter.name)}
     >
       <img className='h-6 w-6' src={wallets[0].adapter.icon} />
       Connect Wallet
 
-    </button>
+    </Button>
   )
 }
 export default WalletConnector

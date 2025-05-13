@@ -1,0 +1,208 @@
+curl 'https://staging-api.streamflow.finance/v2/api/airdrops/claimable/8qWGbcTVaVA9CRoey7SEX3ij2qJDqWm5XbbsNe9L8g7C/?limit=100&skimZeroValued=false' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'baggage: sentry-environment=production,sentry-release=sf-41e8c4da,sentry-public_key=ffe6dfabe4ea43d9947978472d9f11d6,sentry-trace_id=05d25b99a42f429eb8e1834e62e08686' \
+  -b '_gcl_au=1.1.466806413.1744910716; _fbp=fb.1.1744910715992.720273068209484436; __adroll_fpc=f3e766e1641488b3ce0922ab1cb115ed-1744910716644; intercom-id-lixgzyk3=e2093e06-1df1-4d94-ba0d-45a4f00e1b60; intercom-device-id-lixgzyk3=1661b6f4-cb82-457c-aad8-8d20b92b19c8; _hjSessionUser_2800886=eyJpZCI6IjYwMTdlNWRkLWU4OWEtNTAzYy1hMjEzLWMzNmZmNjJlMmE2YiIsImNyZWF0ZWQiOjE3NDQ5MTA3MTU3NTAsImV4aXN0aW5nIjp0cnVlfQ==; _ga=GA1.2.352266524.1744910714; _rdt_uuid=1744910715392.75cf10de-9705-47aa-a1c0-ecb7d4efe1e6; _rdt_em=0000000000000000000000000000000000000000000000000000000000000001; __ar_v4=CP46VGITDVB4VGU4YIEUSU%3A20250417%3A3%7CZQV5GJZF5RD2XNQZIJP27M%3A20250417%3A3; intercom-session-lixgzyk3=; _ga_PJ20FTVCDM=GS2.1.s1746554655$o2$g0$t1746554663$j52$l0$h0; sid=oJ41ltHV-BO_vndbwADEjJc5xPcDmAZaS2EeDgGiRQgih7tjPopPOTavjCdt8n3DrZe_vZ0mEzrkSk-N7OimNA; ph_phc_ILS3Vf9aylbmmjoOBMQt7DbIxYjZ5mXPs8TT2BDRzyb_posthog=%7B%22distinct_id%22%3A%22019644c8-8306-7e0b-88b9-570f71acd212%22%2C%22%24sesid%22%3A%5B1746954882955%2C%220196be9f-da93-78b2-ab42-67fe3e173725%22%2C1746954869395%5D%2C%22%24epp%22%3Atrue%7D' \
+  -H 'dnt: 1' \
+  -H 'origin: https://app.streamflow.finance' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://app.streamflow.finance/airdrops?showUnvalued=true' \
+  -H 'sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'sentry-trace: 05d25b99a42f429eb8e1834e62e08686-8155512fcf3317b6' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
+
+RES: {
+  "limit": 100,
+  "offset": 0,
+  "items": [
+    {
+      "chain": "SOLANA",
+      "distributorAddress": "9s9kj8LZqGihsuR4mA5xi1zxXsttKusNE24ebK7Ben7U",
+      "address": "8qWGbcTVaVA9CRoey7SEX3ij2qJDqWm5XbbsNe9L8g7C",
+      "amountUnlocked": "1500000000000",
+      "amountLocked": "0",
+      "amountClaimed": "0",
+      "mint": "7S14FjSumaRs6Av425ShYobJnomMWKCMioN7N3ikLLCo",
+      "claimableValue": null
+    },
+    {
+      "chain": "SOLANA",
+      "distributorAddress": "64cSW3CVKez1HFqPj4e8Ya9ojj23sahaZSiQs2unmHA6",
+      "address": "8qWGbcTVaVA9CRoey7SEX3ij2qJDqWm5XbbsNe9L8g7C",
+      "amountUnlocked": "0",
+      "amountLocked": "1200000000000",
+      "amountClaimed": "0",
+      "mint": "7S14FjSumaRs6Av425ShYobJnomMWKCMioN7N3ikLLCo",
+      "claimableValue": null
+    }
+  ]
+}
+----
+
+Upcoming: 
+curl 'https://staging-api.streamflow.finance/v2/api/airdrops/upcoming/8qWGbcTVaVA9CRoey7SEX3ij2qJDqWm5XbbsNe9L8g7C/?limit=100&skimClaimableMode=all' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'baggage: sentry-environment=production,sentry-release=sf-41e8c4da,sentry-public_key=ffe6dfabe4ea43d9947978472d9f11d6,sentry-trace_id=05d25b99a42f429eb8e1834e62e08686' \
+  -b '_gcl_au=1.1.466806413.1744910716; _fbp=fb.1.1744910715992.720273068209484436; __adroll_fpc=f3e766e1641488b3ce0922ab1cb115ed-1744910716644; intercom-id-lixgzyk3=e2093e06-1df1-4d94-ba0d-45a4f00e1b60; intercom-device-id-lixgzyk3=1661b6f4-cb82-457c-aad8-8d20b92b19c8; _hjSessionUser_2800886=eyJpZCI6IjYwMTdlNWRkLWU4OWEtNTAzYy1hMjEzLWMzNmZmNjJlMmE2YiIsImNyZWF0ZWQiOjE3NDQ5MTA3MTU3NTAsImV4aXN0aW5nIjp0cnVlfQ==; _ga=GA1.2.352266524.1744910714; _rdt_uuid=1744910715392.75cf10de-9705-47aa-a1c0-ecb7d4efe1e6; _rdt_em=0000000000000000000000000000000000000000000000000000000000000001; __ar_v4=CP46VGITDVB4VGU4YIEUSU%3A20250417%3A3%7CZQV5GJZF5RD2XNQZIJP27M%3A20250417%3A3; intercom-session-lixgzyk3=; _ga_PJ20FTVCDM=GS2.1.s1746554655$o2$g0$t1746554663$j52$l0$h0; sid=oJ41ltHV-BO_vndbwADEjJc5xPcDmAZaS2EeDgGiRQgih7tjPopPOTavjCdt8n3DrZe_vZ0mEzrkSk-N7OimNA; ph_phc_ILS3Vf9aylbmmjoOBMQt7DbIxYjZ5mXPs8TT2BDRzyb_posthog=%7B%22distinct_id%22%3A%22019644c8-8306-7e0b-88b9-570f71acd212%22%2C%22%24sesid%22%3A%5B1746954880011%2C%220196be9f-da93-78b2-ab42-67fe3e173725%22%2C1746954869395%5D%2C%22%24epp%22%3Atrue%7D' \
+  -H 'dnt: 1' \
+  -H 'origin: https://app.streamflow.finance' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://app.streamflow.finance/airdrops?showUnvalued=true&tab=upcoming' \
+  -H 'sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'sentry-trace: 05d25b99a42f429eb8e1834e62e08686-8155512fcf3317b6' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
+
+---
+
+curl 'https://staging-api.streamflow.finance/v2/api/airdrops/?chain=SOLANA&addresses=9s9kj8LZqGihsuR4mA5xi1zxXsttKusNE24ebK7Ben7U,64cSW3CVKez1HFqPj4e8Ya9ojj23sahaZSiQs2unmHA6' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'baggage: sentry-environment=production,sentry-release=sf-41e8c4da,sentry-public_key=ffe6dfabe4ea43d9947978472d9f11d6,sentry-trace_id=05d25b99a42f429eb8e1834e62e08686' \
+  -b '_gcl_au=1.1.466806413.1744910716; _fbp=fb.1.1744910715992.720273068209484436; __adroll_fpc=f3e766e1641488b3ce0922ab1cb115ed-1744910716644; intercom-id-lixgzyk3=e2093e06-1df1-4d94-ba0d-45a4f00e1b60; intercom-device-id-lixgzyk3=1661b6f4-cb82-457c-aad8-8d20b92b19c8; _hjSessionUser_2800886=eyJpZCI6IjYwMTdlNWRkLWU4OWEtNTAzYy1hMjEzLWMzNmZmNjJlMmE2YiIsImNyZWF0ZWQiOjE3NDQ5MTA3MTU3NTAsImV4aXN0aW5nIjp0cnVlfQ==; _ga=GA1.2.352266524.1744910714; _rdt_uuid=1744910715392.75cf10de-9705-47aa-a1c0-ecb7d4efe1e6; _rdt_em=0000000000000000000000000000000000000000000000000000000000000001; __ar_v4=CP46VGITDVB4VGU4YIEUSU%3A20250417%3A3%7CZQV5GJZF5RD2XNQZIJP27M%3A20250417%3A3; intercom-session-lixgzyk3=; _ga_PJ20FTVCDM=GS2.1.s1746554655$o2$g0$t1746554663$j52$l0$h0; sid=oJ41ltHV-BO_vndbwADEjJc5xPcDmAZaS2EeDgGiRQgih7tjPopPOTavjCdt8n3DrZe_vZ0mEzrkSk-N7OimNA; ph_phc_ILS3Vf9aylbmmjoOBMQt7DbIxYjZ5mXPs8TT2BDRzyb_posthog=%7B%22distinct_id%22%3A%22019644c8-8306-7e0b-88b9-570f71acd212%22%2C%22%24sesid%22%3A%5B1746954883456%2C%220196be9f-da93-78b2-ab42-67fe3e173725%22%2C1746954869395%5D%2C%22%24epp%22%3Atrue%7D' \
+  -H 'dnt: 1' \
+  -H 'origin: https://app.streamflow.finance' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://app.streamflow.finance/airdrops?showUnvalued=true' \
+  -H 'sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'sentry-trace: 05d25b99a42f429eb8e1834e62e08686-8155512fcf3317b6' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
+Res: [
+  {
+    "chain": "SOLANA",
+    "mint": "7S14FjSumaRs6Av425ShYobJnomMWKCMioN7N3ikLLCo",
+    "version": 1746881758,
+    "address": "64cSW3CVKez1HFqPj4e8Ya9ojj23sahaZSiQs2unmHA6",
+    "sender": "7xfmB8TqmKUNCS6X2aQtHkUrqnj71YesUPdRvqhxoy1k",
+    "name": "Vested Test",
+    "maxNumNodes": "2",
+    "maxTotalClaim": "2400000000000",
+    "totalAmountUnlocked": "0",
+    "totalAmountLocked": "2400000000000",
+    "isActive": true,
+    "isOnChain": true,
+    "isVerified": false,
+    "clawbackDt": null,
+    "isAligned": false,
+    "merkleRoot": [
+      8,
+      39,
+      30,
+      69,
+      254,
+      194,
+      151,
+      98,
+      57,
+      14,
+      168,
+      133,
+      134,
+      17,
+      227,
+      172,
+      56,
+      37,
+      250,
+      214,
+      84,
+      38,
+      178,
+      74,
+      68,
+      155,
+      197,
+      16,
+      252,
+      68,
+      221,
+      72
+    ]
+  },
+  {
+    "chain": "SOLANA",
+    "mint": "7S14FjSumaRs6Av425ShYobJnomMWKCMioN7N3ikLLCo",
+    "version": 1746868898,
+    "address": "9s9kj8LZqGihsuR4mA5xi1zxXsttKusNE24ebK7Ben7U",
+    "sender": "7xfmB8TqmKUNCS6X2aQtHkUrqnj71YesUPdRvqhxoy1k",
+    "name": "Instant Test",
+    "maxNumNodes": "2",
+    "maxTotalClaim": "3000000000000",
+    "totalAmountUnlocked": "3000000000000",
+    "totalAmountLocked": "0",
+    "isActive": true,
+    "isOnChain": true,
+    "isVerified": false,
+    "clawbackDt": null,
+    "isAligned": false,
+    "merkleRoot": [
+      78,
+      210,
+      4,
+      104,
+      198,
+      55,
+      147,
+      202,
+      76,
+      14,
+      205,
+      15,
+      26,
+      23,
+      1,
+      231,
+      127,
+      129,
+      49,
+      121,
+      155,
+      69,
+      141,
+      4,
+      225,
+      47,
+      188,
+      204,
+      241,
+      108,
+      97,
+      88
+    ]
+  }
+]
+
+----
+
+Token Info:
+curl 'https://token-api.streamflow.finance/meta' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'content-type: application/json' \
+  -H 'dnt: 1' \
+  -H 'origin: https://app.streamflow.finance' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://app.streamflow.finance/' \
+  -H 'sec-ch-ua: "Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36' \
+  --data-raw '{"addresses":["7S14FjSumaRs6Av425ShYobJnomMWKCMioN7N3ikLLCo"],"cluster":"devnet"}'

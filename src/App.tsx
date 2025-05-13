@@ -1,10 +1,11 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import NavBar from "./component/Navbar.tsx"
 import NotConnected from "./pages/NotConnected.tsx"
+import AirdropPage from "./pages/AirdropPage.tsx";
 
 function App() {
   const { connected, publicKey } = useWallet();
-  console.log("publicKey: ", publicKey)
+
   return (
     <div className='w-dvw h-dvh flex flex-col'>
       <NavBar />
@@ -13,7 +14,7 @@ function App() {
           (!connected || !publicKey) ? (
             <NotConnected />
           ) : (
-            <div>Wallet Connected</div>
+            <AirdropPage />
           )
         }
       </div>
