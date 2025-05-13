@@ -10,11 +10,14 @@ const SearchAirdrop = ({ updateSearch }: SearchAirdropsProps) => {
 	const [isLoading, setIsLoading] = useState(false)
 	const [data, setData] = useState<[]>([])
 	const formSubmit = () => {
-		if (address == '') return
+		if (address == '') {
+			updateSearch(false)
+			return
+		}
 
 		setData([])
 		updateSearch(true)
-		setIsLoading(true)
+		// setIsLoading(true)
 	}
 	return (
 		<div className="p-4 w-[80%]">

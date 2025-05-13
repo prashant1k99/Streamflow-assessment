@@ -17,7 +17,7 @@ export type TDistributorData = {
 	isVerified: boolean
 	maxNumNodes: string
 	maxTotalClaim: string
-	merkleRoor: number[]
+	merkleRoot: number[]
 	mint: string
 	name: string
 	sender: string
@@ -25,10 +25,25 @@ export type TDistributorData = {
 	totalAmountUnlocked: string
 	version: number
 }
+
+export type TAirdropData = TDistributorData & {
+	baseInfo: TAidropInfo
+}
+
 export type TClaimantData = {
 	address: string
 	amountClaimed: string
 	amountLocked: string
 	amountUnlocked: string
 	distributorAddress: string
+}
+
+export type SPLTokenData = {
+	program: string
+	parsed: {
+		info: {
+			decimals: number
+		}
+		type: string
+	}
 }
